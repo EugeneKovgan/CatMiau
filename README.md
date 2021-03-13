@@ -1,2 +1,2 @@
 # CatMiau
-https://github.com/EugeneKovgan/CatMiau/index.html
+https://EugeneKovgan.github.io/CatMiau/index.html
