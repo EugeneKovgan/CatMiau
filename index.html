@@ -1,0 +1,63 @@
+<audio id="pl" src="miau.mp3"></audio>
+<div class="root">
+    <div class="cell"><img class="active" src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+    <div class="cell"><img src="pin.jpg"></div>
+
+</div>
+<h1 id="counterClick"></h1>
+<style>
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: inherit;
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .root {
+        width: 160px;
+    }
+
+    .cell {
+        width: 50px;
+        height: 50px;
+        border: solid 1px black;
+        border-radius: 50%;
+        float: left;
+    }
+</style>
+
+<script>
+    let counter = 0;
+    let counterElement = document.getElementById("counterClick");
+    let player = document.getElementById("pl")
+    setInterval(() => {
+
+        let activeImgs = document.getElementsByClassName("active");
+        activeImgs[0].className = "";
+
+        let x = Math.floor(Math.random() * (8 - 0 + 1)) + 0;
+
+        let allImgs = document.getElementsByTagName("img");
+        allImgs[x].className = "active";
+
+        allImgs[x].onclick = () => {
+            counter++;
+            counterElement.innerText = counter;
+            player.currentTime = 0;
+            player.play();
+        }
+
+    }, 3000);
+
+</script>
